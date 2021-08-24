@@ -36,7 +36,7 @@ namespace gr {
     class AISTX_API Build_Frame : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<Build_Frame> sptr;
+      typedef std::shared_ptr<Build_Frame> sptr;
 
       /*!
        * \brief Builds an AIS Frame of 256 bytes.

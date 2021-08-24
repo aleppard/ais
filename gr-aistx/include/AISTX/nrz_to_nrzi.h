@@ -36,7 +36,7 @@ namespace gr {
     class AISTX_API nrz_to_nrzi : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<nrz_to_nrzi> sptr;
+      typedef std::shared_ptr<nrz_to_nrzi> sptr;
 
       /*!
        * \brief Convert from NRZ to NRZI

@@ -97,7 +97,7 @@ endmacro(GR_PYTHON_CHECK_MODULE)
 ########################################################################
 execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "
 from distutils import sysconfig
-print sysconfig.get_python_lib(plat_specific=True, prefix='')
+print(sysconfig.get_python_lib(plat_specific=True, prefix=''))
 " OUTPUT_VARIABLE GR_PYTHON_DIR OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 file(TO_CMAKE_PATH ${GR_PYTHON_DIR} GR_PYTHON_DIR)
@@ -109,7 +109,7 @@ file(TO_CMAKE_PATH ${GR_PYTHON_DIR} GR_PYTHON_DIR)
 function(GR_UNIQUE_TARGET desc)
     file(RELATIVE_PATH reldir ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
     execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "import re, hashlib
-unique = hashlib.md5('${reldir}${ARGN}').hexdigest()[:5]
+unique = hashlib.md5('${reldir}${ARGN}'.encode()).hexdigest()[:5]
 print(re.sub('\\W', '_', '${desc} ${reldir} ' + unique))"
     OUTPUT_VARIABLE _target OUTPUT_STRIP_TRAILING_WHITESPACE)
     add_custom_target(${_target} ALL DEPENDS ${ARGN})
