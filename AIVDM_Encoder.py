@@ -156,7 +156,7 @@ def encode_21(__mmsi, __aid_type, __aid_name, __long, __lat, __vsize, __virtual)
 			_name = encode_string(__aid_name[:20])
 			_name_ext =  encode_string(__aid_name[20:])
 			_name_ext += ''.rjust(len(_name_ext) % 8, '0')
-			print _name_ext
+			print(_name_ext)
 
 	_accurancy = '0'
 
@@ -344,7 +344,7 @@ def main():
 	else:
 		parser.error("Sentence type not supported: -h for help.")
 
-	print payload
+	print(payload)
 
 
 if __name__ == "__main__":
