@@ -38,7 +38,7 @@ namespace gr {
     class AISTX_API DebugME : virtual public gr::block
     {
      public:
-      typedef std::shared_ptr<DebugME> sptr;
+      typedef boost::shared_ptr<DebugME> sptr;
 
       /*!
        * \brief Print the incoming BYTE sequence as sequence of HEXs
