@@ -346,6 +346,9 @@ namespace gr {
 			  gr_vector_const_void_star &input_items,
 			  gr_vector_void_star &output_items)
     {
+        if (!d_repeat && !first) return WORK_DONE;
+        first = false;
+      
         unsigned char *out = (unsigned char *) output_items[0];
         
 //		B3co>HP00                                              P      ;8           ;56                RD           =Is3                     w      sU           kP06	                 CRC

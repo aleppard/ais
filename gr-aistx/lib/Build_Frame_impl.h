@@ -33,6 +33,7 @@ namespace gr {
      private:
 		bool d_repeat;
 		bool d_enable_NRZI;
+                bool first = false; // Is the next frame the first frame?
 		//char * d_sentence;
 		char *payload;	// [the 01 rapresentation of the sentence as taken from input]
 		unsigned short LEN_SENTENCE;
