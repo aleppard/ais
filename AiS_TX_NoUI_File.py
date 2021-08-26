@@ -55,7 +55,7 @@ class top_block(gr.top_block):
         # Blocks
         ##################################################
         self.file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex, "output.iq", False)
-            self.file_sink_0.set_unbuffered(False)
+        self.file_sink_0.set_unbuffered(False)
         self.digital_gmsk_mod_0 = digital.gmsk_mod(
             samples_per_symbol=int(samp_rate/bit_rate),
             bt=0.4,
